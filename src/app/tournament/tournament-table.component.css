@@ -1,0 +1,86 @@
+.tournament-card-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  min-height: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.tournament-card-col {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  align-items: center;
+}
+
+.tournament-title {
+  font-size: 1.75rem;
+  min-height: 40px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.mat-column-pos {
+  border: 1px solid black;
+}
+
+.mat-column-matchHeader {
+  border: 1px solid black;
+  color: blue !important;
+
+}
+
+.mat-column-homeTeamHeader {
+  border: 1px solid black;
+  color: green !important;
+}
+
+.mat-column-homeTeamNameHeader {
+  border: 1px solid black;
+  color: green !important;
+}
+
+.mat-column-homeTeamScoreHeader {
+  border: 1px solid black;
+  color: green !important;
+}
+
+.mat-column-guestTeamHeader {
+  border: 1px solid black;
+  color: brown !important;
+}
+
+.mat-column-guestTeamNameHeader {
+  border: 1px solid black;
+  color: brown !important;
+}
+
+.mat-column-guestTeamScoreHeader {
+  border: 1px solid black;
+  color: brown !important;
+}
+
+.mat-column-matchName {
+  border: 1px solid black;
+}
+
+.mat-column-homeTeamName {
+  border: 1px solid black;
+}
+
+.mat-column-homeTeamScore {
+  border: 1px solid black;
+}
+
+.mat-column-guestTeamName {
+  border: 1px solid black;
+}
+
+.mat-column-guestTeamScore {
+  border: 1px solid black;
+}

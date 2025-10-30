@@ -1,0 +1,12 @@
+export const MATCHES_NUMBER = 5;
+export const FULL_MATCHES_NUMBER = 72;
+export const MATCH_NAME = '4th Match';
+export const HOME_TEAM_NAME = 'Uruguay';
+export const HOME_TEAM_SCORE = 6;
+export const GUEST_TEAM_NAME = 'Italy';
+export const GUEST_TEAM_SCORE = 6;
+export const ADDED_MATCH_NAME = 'The Match One';
+export const ADDED_HOME_TEAM_NAME = 'The Home Team One';
+export const ADDED_GUEST_TEAM_NAME = 'The Guest Team One';
+export const ADDED_HOME_TEAM_SCORE = 6;
+export const ADDED_GUEST_TEAM_SCORE = 6;

@@ -1,0 +1,76 @@
+<mat-card class="tournament-card" appearance="outlined">
+    <mat-card-header>
+        <mat-card-title>
+            <div class="tournament-card-row">
+                <div class="tournament-title">
+                    🏆 Tournament
+                </div>
+            </div>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="mat-elevation-z2">
+            <table mat-table class="full-width-table" matSort aria-label="Items">
+                <ng-container matColumnDef="pos">
+                    <th mat-header-cell *matHeaderCellDef rowspan="2">Position</th>
+                    <td mat-cell *matCellDef="let i = index">
+                        @switch (i + 1) {
+                        @case (1) {1️⃣}
+                        @case (2) {2️⃣}
+                        @case (3) {3️⃣}
+                        @case (4) {4️⃣}
+                        @case (5) {5️⃣}
+                        @case (6) {6️⃣}
+                        @case (7) {7️⃣}
+                        @case (8) {8️⃣}
+                        @case (9) {9️⃣}
+                        @case (10) {🔟}
+                        @default { {{i + 1}} }
+                        }
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="matchHeader">
+                    <th mat-header-cell *matHeaderCellDef rowspan="2">Match Name</th>
+                </ng-container>
+                <ng-container matColumnDef="homeTeamHeader">
+                    <th mat-header-cell *matHeaderCellDef colspan="2">Home Team</th>
+                </ng-container>
+                <ng-container matColumnDef="guestTeamHeader">
+                    <th mat-header-cell *matHeaderCellDef colspan="2">Guest Team</th>
+                </ng-container>
+                <ng-container matColumnDef="homeTeamNameHeader">
+                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                </ng-container>
+                <ng-container matColumnDef="homeTeamScoreHeader">
+                    <th mat-header-cell *matHeaderCellDef>Score</th>
+                </ng-container>
+                <ng-container matColumnDef="guestTeamNameHeader">
+                    <th mat-header-cell *matHeaderCellDef>Name</th>
+                </ng-container>
+                <ng-container matColumnDef="guestTeamScoreHeader">
+                    <th mat-header-cell *matHeaderCellDef>Score</th>
+                </ng-container>
+                <ng-container matColumnDef="matchName">
+                    <td mat-cell *matCellDef="let row">{{row.name}}</td>
+                </ng-container>
+                <ng-container matColumnDef="homeTeamName">
+                    <td mat-cell *matCellDef="let row">{{row.teams[0]?.name ?? ''}}</td>
+                </ng-container>
+                <ng-container matColumnDef="homeTeamScore">
+                    <td mat-cell *matCellDef="let row">{{row.teams[0]?.score ?? 0}}</td>
+                </ng-container>
+                <ng-container matColumnDef="guestTeamName">
+                    <td mat-cell *matCellDef="let row">{{row.teams[1]?.name ?? ''}}</td>
+                </ng-container>
+                <ng-container matColumnDef="guestTeamScore">
+                    <td mat-cell *matCellDef="let row">{{row.teams[1]?.score ?? 0}}</td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedHeaderColumns1"></tr>
+                <tr mat-header-row *matHeaderRowDef="displayedHeaderColumns2"></tr>
+                <tr mat-row *matRowDef="let row; let index; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+</mat-card>

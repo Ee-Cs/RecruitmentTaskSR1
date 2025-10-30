@@ -1,0 +1,82 @@
+.scoreboard-card {
+  min-width: 120px;
+  margin: 20px auto;
+}
+
+.scoreboard-title {
+  font-size: 1.75rem;
+  min-height: 40px;
+}
+
+.scoreboard-form-field {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.home-team-col {
+  flex: 1;
+  margin-right: 400px;
+}
+
+.guest-team-col {
+  flex: 1;
+  margin-right: 0px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+
+form {
+  margin: -20px 5px 0px 5px;
+}
+
+mat-card-title {
+  margin: 0px 0px 20px 0px;
+}
+
+.mat-mdc-button-base {
+  margin-right: 15px;
+}
+
+.score-input {
+  font-size: 4em !important;
+  text-align: right;
+}
+
+.score-winning {
+  color: green !important;
+}
+
+.score-losing {
+  color: red !important;
+}
+
+.score-tied {
+  color: blue !important;
+}
+
+.score-button {
+  font-size: 2em !important;
+  min-width: 240px;
+  min-height: 80px;
+  margin-bottom: 8px;
+  justify-content: flex-start;
+}
+
+.add-button {
+  background-color: lightcyan !important;
+}
+
+.subtract-button {
+  background-color: lavenderblush !important;
+}

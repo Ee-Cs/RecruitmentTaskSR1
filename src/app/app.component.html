@@ -1,0 +1,34 @@
+<main class="main">
+  <div class="content">
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+      <span>Menu</span>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="menuHandler(menuItems['Home'])">
+        <mat-icon>{{menuItems['Home'].icon}}</mat-icon>
+        <span>{{menuItems['Home'].label}}</span>
+      </button>
+      <button mat-menu-item (click)="menuHandler(menuItems['Scoreboard'])">
+        <mat-icon>{{menuItems['Scoreboard'].icon}}</mat-icon>
+        <span>{{menuItems['Scoreboard'].label}}</span>
+      </button>
+      <button mat-menu-item (click)="menuHandler(menuItems['Tournament'])">
+        <mat-icon>{{menuItems['Tournament'].icon}}</mat-icon>
+        <span>{{menuItems['Tournament'].label}}</span>
+      </button>
+      <button mat-menu-item (click)="menuHandler(menuItems['CreatePDFReports'])">
+        <mat-icon>{{menuItems['CreatePDFReports'].icon}}</mat-icon>
+        <span>{{menuItems['CreatePDFReports'].label}}</span>
+      </button>
+      <button mat-menu-item (click)="menuHandler(menuItems['Settings'])">
+        <mat-icon>{{menuItems['Settings'].icon}}</mat-icon>
+        <span>{{menuItems['Settings'].label}}</span>
+      </button>
+    </mat-menu>
+  </div>
+
+  <div class="repository-type-name">{{repositoryTypeName}}</div>
+</main>
+<router-outlet />

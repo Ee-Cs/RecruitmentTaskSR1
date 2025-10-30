@@ -1,0 +1,38 @@
+<mat-card class="settings-card" appearance="outlined">
+    <mat-card-header>
+        <mat-card-title>
+            <div class="settings-card-row">
+                <div class="settings-title">
+                    ⚙️ Settings
+                </div>
+            </div>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+    </mat-card-content>
+    <mat-card-actions>
+        <div class="settings-card-row">
+            <div class="settings-card-col repository-type-label">
+                Dataset
+            </div>
+            <div class="settings-card-col">
+                <form [formGroup]="settingsForm">
+                    <mat-radio-group formControlName="datasetTypeSelect" class="repository-type-radio-group">
+                        @for (datasetType of datasetTypeArray; track datasetType) {
+                        <mat-radio-button [value]="datasetType" class="repository-type-button">
+                            {{ describeDatasetType(datasetType) }}
+                        </mat-radio-button>
+                        }
+                    </mat-radio-group>
+                </form>
+            </div>
+            <div class="settings-card-col settings-card-col-actions">
+                <button mat-raised-button color="primary" class="load-dataset-button" (click)="initialiseDataset()"
+                    [disabled]="settingsForm.controls.datasetTypeSelect.value === originalDatasetType"
+                    aria-label="Load dataset">
+                    Load dataset
+                </button>
+            </div>
+        </div>
+    </mat-card-actions>
+</mat-card>

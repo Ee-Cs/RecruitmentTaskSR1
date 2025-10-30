@@ -1,0 +1,89 @@
+<form [formGroup]="scoreboardForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card appearance="outlined" class="scoreboard-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>
+          <div class="scoreboard-title">
+            🔢 Scoreboard
+          </div>
+        </mat-card-title>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <p>⚽ Match</p>
+          <mat-form-field class="scoreboard-form-field" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input placeholder="match name" matInput formControlName="matchName">
+            @if (scoreboardForm.controls['matchName'].hasError('required')) {
+            <mat-error>Match Name is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="home-team-col">
+          <p>🏠 Home Team</p>
+          <div class="row">
+            <mat-form-field class="scoreboard-form-field" appearance="outline">
+              <mat-label>Name</mat-label>
+              <input placeholder="Home team name" matInput formControlName="homeTeamName">
+              @if (scoreboardForm.controls['homeTeamName'].hasError('required')) {
+              <mat-error>Home team name is <strong>required</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <mat-form-field class="scoreboard-form-field" appearance="outline">
+              <mat-label>Score</mat-label>
+              <input matInput formControlName="homeTeamScore" readonly class="score-input"
+                [ngClass]="getScoreClass('home')" #homeScore>
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <button mat-stroked-button type="button" (click)="addHomeTeamScore()" class="score-button add-button">
+              ➕ Add
+            </button>
+          </div>
+          <div class="row">
+            <button mat-stroked-button type="button" (click)="subtractHomeTeamScore()" class="score-button subtract-button">
+              ➖ Subtract
+            </button>
+          </div>
+        </div>
+        <div class="guest-team-col">
+          <p>🌍 Guest Team</p>
+          <div class="row">
+            <mat-form-field class="scoreboard-form-field" appearance="outline">
+              <mat-label>Name</mat-label>
+              <input placeholder="Guest team name" matInput formControlName="guestTeamName">
+              @if (scoreboardForm.controls['guestTeamName'].hasError('required')) {
+              <mat-error>Guest team name is <strong>required</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
+          <mat-form-field class="scoreboard-form-field" appearance="outline">
+            <mat-label>Score</mat-label>
+            <input matInput formControlName="guestTeamScore" readonly class="score-input"
+              [ngClass]="getScoreClass('guest')" #guestScore>
+          </mat-form-field>
+          <div class="row">
+            <button mat-stroked-button type="button" (click)="addGuestTeamScore()" class="score-button add-button">
+              ➕ Add
+            </button>
+          </div>
+          <div class="row">
+            <button mat-stroked-button type="button" (click)="subtractGuestTeamScore()" class="score-button subtract-button">
+              ➖ Subtract
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-stroked-button type="button" (click)="deleteMatch()">Delete match</button>
+      <button mat-stroked-button type="submit" [disabled]="!scoreboardForm.valid">Finish match</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

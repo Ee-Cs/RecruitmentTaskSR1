@@ -1,0 +1,23 @@
+.report-title {
+  font-size: 1.75rem;
+  min-height: 40px;
+}
+
+.report-controls-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1em;
+  gap: 2em;
+}
+
+.report-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.qr-code-images-tab {
+  background-color: mistyrose;
+}
